@@ -1,0 +1,388 @@
+---
+// Itinerario.astro
+---
+
+<section class="py-2 px-4 relative overflow-hidden">
+  <!-- Fondo sutil -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#fffaf5]/30 via-transparent to-[#fff5f5]/30 z-0"></div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+
+    <div class="max-w-3xl mx-auto">
+
+      <!-- TÍTULO -->
+      <div class="text-center mb-4" id="titulo-itinerario">
+        <h2 class="font-charm text-xl md:text-4xl lg:text-5xl text-[#a27735] font-bold mb-4">
+          ITINERARIO
+        </h2>
+        <!-- Línea decorativa -->
+        <div class="flex items-center justify-center gap-2">
+          <div class="w-12 h-[1px] bg-gradient-to-r from-transparent to-[#a27735]"></div>
+          <div class="w-1.5 h-1.5 rounded-full bg-[#a27735]"></div>
+          <div class="w-12 h-[1px] bg-gradient-to-l from-transparent to-[#a27735]"></div>
+        </div>
+      </div>
+
+      <!-- TIMELINE CONTAINER -->
+      <div class="relative px-4">
+        
+        <!-- Línea vertical CENTRAL -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#a27735] via-[#c9a55e] to-[#a27735]" id="linea-central"></div>
+
+        <!-- EVENTOS DEL ITINERARIO -->
+        <div class="space-y-0" id="eventos-container">
+
+          <!-- ❤️ CORAZÓN 1 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 1: Ingreso de invitados (IZQUIERDA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/IconoDireccion.webp" alt="Ingreso" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Ingreso de invitados</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">8:00 p.m.</p>
+            </div>
+            <div></div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 2 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 2: Ingreso madre y madrina (DERECHA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div></div>
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/Madrina.webp" alt="Madre" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Ingreso de madre y madrina</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">9:45 p.m.</p>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 3 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 3: Entrada de la quinceañera (IZQUIERDA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/Vestido.webp" alt="Quinceañera" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Entrada de la quinceañera</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">10:00 p.m.</p>
+            </div>
+            <div></div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 4 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 4: Cambio de zapatillas (DERECHA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div></div>
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/Zapatos.webp" alt="Cambio" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Cambio de zapatillas, anillo, medalla, último juguete, coronación</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">10:10 p.m.</p>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 5 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 5: Vals (IZQUIERDA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/Vals.png" alt="Vals" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Vals con mamá, tías, abuelos, familia, damas y amigos</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">10:30 p.m.</p>
+            </div>
+            <div></div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 6 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 6: Brindis (DERECHA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div></div>
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/Brindis.webp" alt="Brindis" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Brindis y palabras</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">10:45 p.m.</p>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 7 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 7: Cena (IZQUIERDA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/Cena.png" alt="Cena" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Cena</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">11:00 p.m.</p>
+            </div>
+            <div></div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 8 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 8: Baile sorpresa (DERECHA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div></div>
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/Baile.webp" alt="Baile" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Baile sorpresa</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">11:30 p.m.</p>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 9 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 9: Pastel (IZQUIERDA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/Torta.png" alt="Pastel" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Pastel</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">11:55 p.m.</p>
+            </div>
+            <div></div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 10 -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 10: Hora loca (DERECHA) -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8">
+            <div></div>
+            <div class="flex flex-col items-center justify-center px-2 md:px-4">
+              <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 md:mb-2">
+                <img src="/imagenes/HoraLoca.png" alt="Hora loca" class="w-full h-full object-contain" />
+              </div>
+              <p class="font-charm text-xs md:text-sm lg:text-base text-[#a27735] font-bold text-center leading-tight">Hora loca y mini bar</p>
+              <p class="font-charm text-[10px] md:text-xs text-[#95303a] text-center">12:10 a.m.</p>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN FINAL -->
+          <div class="flex justify-center">
+            <div class="w-7 h-7 rounded-full bg-[#a27735] flex items-center justify-center relative z-10 corazon-item">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== 'undefined') {
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("📅 Iniciando itinerario simultáneo...");
+
+      // 🎯 ESTADO INICIAL
+      gsap.set("#titulo-itinerario", { opacity: 0, scale: 0.9 });
+      gsap.set("#linea-central", { opacity: 0, scaleY: 0, transformOrigin: "top" });
+      gsap.set(".corazon-item", { opacity: 0, scale: 0 });
+      
+      // Eventos de la IZQUIERDA empiezan desde la izquierda
+      const eventosIzq = document.querySelectorAll(".evento-item:nth-child(4n+2)");
+      gsap.set(eventosIzq, { opacity: 0, x: -100 });
+      
+      // Eventos de la DERECHA empiezan desde la derecha
+      const eventosDer = document.querySelectorAll(".evento-item:nth-child(4n+4)");
+      gsap.set(eventosDer, { opacity: 0, x: 100 });
+
+      // ✨ ANIMACIÓN SIMULTÁNEA - TODO AL MISMO TIEMPO
+      ScrollTrigger.create({
+        trigger: "#titulo-itinerario",
+        start: "top 85%",
+        end: "top 20%",
+        onEnter: () => {
+          const tl = gsap.timeline();
+
+          // TODO aparece al mismo tiempo
+          tl.to("#titulo-itinerario, #linea-central, .corazon-item", {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+          })
+          // Animaciones individuales del centro (simultáneas)
+          .to("#titulo-itinerario", {
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.2)",
+          }, "<")
+          .to("#linea-central", {
+            scaleY: 1,
+            duration: 1,
+            ease: "power2.inOut",
+          }, "<")
+          .to(".corazon-item", {
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.5)",
+          }, "<")
+          // Eventos de la IZQUIERDA vienen desde la izquierda
+          .to(eventosIzq, {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+          }, "<")
+          // Eventos de la DERECHA vienen desde la derecha
+          .to(eventosDer, {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+          }, "<");
+        },
+        onLeaveBack: () => {
+          // Salida simultánea
+          const tl = gsap.timeline();
+          
+          tl.to("#titulo-itinerario, #linea-central, .corazon-item", {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.in",
+          })
+          .to("#titulo-itinerario", {
+            scale: 0.9,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#linea-central", {
+            scaleY: 0,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to(".corazon-item", {
+            scale: 0,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          // Eventos izquierda se van a la izquierda
+          .to(eventosIzq, {
+            opacity: 0,
+            x: -100,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          // Eventos derecha se van a la derecha
+          .to(eventosDer, {
+            opacity: 0,
+            x: 100,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<");
+        },
+      });
+
+      console.log("📅❤️ ¡Itinerario simultáneo activado!");
+    });
+  }
+</script>
+
+<style>
+  /* Hover en los eventos */
+  .evento-item:hover p {
+    color: #8b5e3c;
+    transition: color 0.3s ease;
+  }
+
+  /* Corazones con brillo */
+  .corazon-item {
+    filter: drop-shadow(0 2px 4px rgba(162, 119, 53, 0.3));
+    transition: all 0.3s ease;
+  }
+</style>

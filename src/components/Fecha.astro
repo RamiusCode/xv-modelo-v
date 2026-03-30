@@ -1,0 +1,199 @@
+---
+// FechaEvento.astro
+---
+
+<section class="py-10 px-4">
+  <div class="max-w-2xl mx-auto text-center">
+    <!-- Flores centrales arriba -->
+    <div class="flex justify-center mb-6" id="flores-fecha">
+      <img
+        src="/imagenes/Separador.webp"
+        alt="Flores decorativas"
+        class="w-40 md:w-56 lg:w-64 h-auto"
+      />
+    </div>
+
+    <!-- Texto "Acompáñanos este día tan especial" CON MARIPOSAS -->
+    <div class="mb-4" id="texto-invitacion-container">
+      <div
+        class="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 px-4"
+      >
+        <!-- 🦋 MARIPOSA IZQUIERDA -->
+        <div id="mariposa-invitacion-izq" class="flex-shrink-0">
+          <img
+            src="/gif/mariposaVerde.gif"
+            alt="Mariposa izquierda"
+            class="w-10 h-auto sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 object-contain"
+          />
+        </div>
+
+        <!-- TEXTO CENTRAL - TAMAÑO AUMENTADO -->
+        <div id="texto-invitacion" class="flex-shrink-0">
+          <p
+            class="font-charm text-2xl sm:text-3xl md:text-4xl text-[#D4AF37] leading-relaxed text-center"
+          >
+            Acompáñanos este día<br />tan especial
+          </p>
+        </div>
+
+        <!-- 🦋 MARIPOSA DERECHA -->
+        <div id="mariposa-invitacion-der" class="flex-shrink-0">
+          <img
+            src="/gif/mariposaVerde.gif"
+            alt="Mariposa derecha"
+            class="w-10 h-auto sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 object-contain transform scale-x-[-1]"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Fecha con líneas arriba y abajo -->
+    <div class="relative max-w-md mx-auto" id="fecha-evento">
+      <div class="flex items-center justify-center gap-4 md:gap-6">
+        <!-- SÁBADO con líneas arriba y abajo - ANCHO FIJO -->
+        <div class="flex flex-col items-center w-24 md:w-28">
+          <div class="w-full h-px bg-[#D4AF37] mb-2"></div>
+          <span
+            class="font-charm text-xl md:text-lg text-[#046D51] uppercase tracking-wider font-bold text-center"
+            >SÁBADO</span
+          >
+          <div class="w-full h-px bg-[#D4AF37] mt-2"></div>
+        </div>
+
+        <!-- Número 08 - CENTRADO -->
+        <div
+          class="flex items-center justify-center min-w-[80px] md:min-w-[100px]"
+        >
+          <span class="font-charm text-7xl md:text-8xl text-[#D4AF37] font-bold -ml-1"
+            >13</span
+          >
+        </div>
+
+        <!-- NOVIEMBRE con líneas arriba y abajo - ANCHO FIJO -->
+        <div class="flex flex-col items-center w-24 md:w-28">
+          <div class="w-full h-px bg-[#D4AF37] mb-2"></div>
+          <span
+            class="font-charm text-xl md:text-lg text-[#046D51] uppercase tracking-wider font-bold text-center"
+            >DICIEMBRE</span
+          >
+          <div class="w-full h-px bg-[#D4AF37] mt-2"></div>
+        </div>
+      </div>
+
+      <!-- Año - MOVIDO CON TRANSLATE -->
+      <div class="mt-2 flex justify-center" id="anio-evento">
+        <p class="font-charm text-3xl md:text-4xl text-[#046D51] font-bold -translate-x-2">2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("✨ Iniciando animaciones de fecha...");
+
+      // 🎯 ESTADO INICIAL - Todo oculto
+      gsap.set("#flores-fecha", { opacity: 0, scale: 0.8 });
+      gsap.set("#mariposa-invitacion-izq", { opacity: 0, x: -50 });
+      gsap.set("#mariposa-invitacion-der", { opacity: 0, x: 50 });
+      gsap.set("#texto-invitacion", { opacity: 0, scale: 0.9 });
+      gsap.set("#fecha-evento", { opacity: 0, scale: 0.9 });
+      gsap.set("#anio-evento", { opacity: 0, scale: 0.9 });
+
+      // ✨ ANIMACIÓN SIMULTÁNEA - TODO AL MISMO TIEMPO
+      ScrollTrigger.create({
+        trigger: "#flores-fecha",
+        start: "top 85%",
+        end: "top 20%",
+        onEnter: () => {
+          const tl = gsap.timeline();
+
+          // TODO aparece al mismo tiempo
+          tl.to("#flores-fecha, #mariposa-invitacion-izq, #mariposa-invitacion-der, #texto-invitacion, #fecha-evento, #anio-evento", {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+          })
+          // Animaciones individuales (simultáneas)
+          .to("#flores-fecha", {
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.4)",
+          }, "<")
+          .to("#mariposa-invitacion-izq", {
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+          }, "<")
+          .to("#mariposa-invitacion-der", {
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+          }, "<")
+          .to("#texto-invitacion, #fecha-evento, #anio-evento", {
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.2)",
+          }, "<");
+
+          // 🦋 FLOTADO DE MARIPOSAS (después de aparecer)
+          gsap.to("#mariposa-invitacion-izq", {
+            y: -8,
+            duration: 2.5,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.5,
+          });
+
+          gsap.to("#mariposa-invitacion-der", {
+            y: -8,
+            duration: 2.5,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.5,
+          });
+        },
+        onLeaveBack: () => {
+          // Resetear todo al salir por arriba - SIMULTÁNEO
+          const tl = gsap.timeline();
+          
+          tl.to("#flores-fecha, #mariposa-invitacion-izq, #mariposa-invitacion-der, #texto-invitacion, #fecha-evento, #anio-evento", {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.in",
+          })
+          .to("#flores-fecha", {
+            scale: 0.8,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#mariposa-invitacion-izq", {
+            x: -50,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#mariposa-invitacion-der", {
+            x: 50,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#texto-invitacion, #fecha-evento, #anio-evento", {
+            scale: 0.9,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<");
+        },
+      });
+
+      console.log("🎉 Animaciones de fecha listas!");
+    });
+  }
+</script>

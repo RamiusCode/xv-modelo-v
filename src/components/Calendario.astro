@@ -1,0 +1,251 @@
+---
+// ========================================
+// ✏️ CONFIGURACIÓN FÁCIL - EDITA AQUÍ
+// ========================================
+const NOMBRE = "Mishell"; // 👈 Cambia el nombre aquí
+const DIA_ESPECIAL = 26; // 👈 Cambia el día aquí
+const MES = 12; // 👈 Número del mes (1=Enero, 12=Diciembre)
+const AÑO = 2026; // 👈 Cambia el año aquí
+// ========================================
+
+// 🤖 ESTO SE CALCULA SOLO - NO TOCAR
+const MESES_NOMBRES = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre",
+];
+const MES_NOMBRE = `${MESES_NOMBRES[MES - 1]} ${AÑO}`;
+const DIAS_EN_MES = new Date(AÑO, MES, 0).getDate();
+const DIA_INICIO = new Date(AÑO, MES - 1, 1).getDay(); // 0=Dom, 1=Lun...
+// ========================================
+---
+
+<section class="py-8 px-6 sm:px-8 md:px-12 lg:px-16">
+  <div class="max-w-3xl mx-auto relative">
+    <!-- CONTENEDOR DEL CALENDARIO -->
+    <div class="max-w-xl mx-auto px-4 relative">
+      <!-- FLORES LATERALES IZQUIERDA -->
+      <div
+        class="absolute -left-4 md:-left-16 lg:-left-20 top-24 md:top-28 w-12 md:w-32 lg:w-40 pointer-events-none z-0"
+        id="flores-cal-izq"
+      >
+        <img
+          src="/imagenes/FloresIzquierda.webp"
+          alt="Flores"
+          class="w-12 h-auto object-contain scale-x-[-1]"
+        />
+      </div>
+
+      <!-- FLORES LATERALES DERECHA -->
+      <div
+        class="absolute -right-4 md:-right-16 lg:-right-20 top-24 md:top-28 w-12 md:w-32 lg:w-40 pointer-events-none z-0"
+        id="flores-cal-der"
+      >
+        <img
+          src="/imagenes/FloresDerecha.webp"
+          alt="Flores"
+          class="w-12 h-auto object-contain scale-x-[-1]"
+        />
+      </div>
+
+      <div
+        class="bg-white rounded-3xl shadow-lg border-2 border-[#D4AF37] p-4 md:p-8 relative z-10"
+        id="calendario-card"
+      >
+        <!-- MARIPOSAS + TÍTULO DEL MES -->
+        <div
+          class="flex items-center justify-center gap-4 md:gap-6 mb-6"
+          id="titulo-mes-container"
+        >
+          <div id="mariposa-cal-izq">
+            <img
+              src="/gif/mariposaVerde.gif"
+              alt="Mariposa"
+              class="w-10 h-10 md:w-14 md:h-14 object-contain"
+            />
+          </div>
+
+          <h3 class="font-charm text-xl md:text-4xl text-[#D4AF37] font-bold">
+            {MES_NOMBRE}
+          </h3>
+
+          <div id="mariposa-cal-der">
+            <img
+              src="/gif/mariposaVerde.gif"
+              alt="Mariposa"
+              class="w-10 h-10 md:w-14 md:h-14 object-contain scale-x-[-1]"
+            />
+          </div>
+        </div>
+
+        <!-- DÍAS DE LA SEMANA -->
+        <div class="grid grid-cols-7 gap-1 md:gap-2 mb-3">
+          <div
+            class="text-center font-charm text-sm md:text-base text-[#046D51] font-bold"
+          >
+            D
+          </div>
+          <div
+            class="text-center font-charm text-sm md:text-base text-[#046D51] font-bold"
+          >
+            L
+          </div>
+          <div
+            class="text-center font-charm text-sm md:text-base text-[#046D51] font-bold"
+          >
+            M
+          </div>
+          <div
+            class="text-center font-charm text-sm md:text-base text-[#046D51] font-bold"
+          >
+            M
+          </div>
+          <div
+            class="text-center font-charm text-sm md:text-base text-[#046D51] font-bold"
+          >
+            J
+          </div>
+          <div
+            class="text-center font-charm text-sm md:text-base text-[#046D51] font-bold"
+          >
+            V
+          </div>
+          <div
+            class="text-center font-charm text-sm md:text-base text-[#046D51] font-bold"
+          >
+            S
+          </div>
+        </div>
+
+        <!-- DÍAS DEL MES - DICIEMBRE 2025 (Empieza en LUNES) -->
+        <div class="grid grid-cols-7 gap-1 md:gap-2" id="dias-container">
+          <!-- Espacios vacíos según el día que empieza el mes -->
+          {Array.from({ length: DIA_INICIO }, (_, i) => <div />)}
+
+          <!-- Días del mes - dinámicos -->
+          {
+            Array.from({ length: DIAS_EN_MES }, (_, i) => i + 1).map((dia) =>
+              dia === DIA_ESPECIAL ? (
+                <div
+                  class="aspect-square flex items-center justify-center rounded-lg bg-gradient-to-br from-[#046D51] to-[#059669] shadow-xl dia-calendario"
+                  id="dia-especial"
+                  title={`¡El día de ${NOMBRE}!`}
+                >
+                  <span class="font-charm text-2xl md:text-3xl text-white font-bold">
+                    {dia}
+                  </span>
+                </div>
+              ) : (
+                <div class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario">
+                  <span class="font-charm text-base md:text-lg text-gray-600">
+                    {dia}
+                  </span>
+                </div>
+              ),
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.set("#flores-cal-izq", { opacity: 0, x: 60 });
+      gsap.set("#flores-cal-der", { opacity: 0, x: -60 });
+      gsap.set("#calendario-card", { opacity: 0, scale: 0.95 });
+      gsap.set("#mariposa-cal-izq", { opacity: 0, x: -20 });
+      gsap.set("#mariposa-cal-der", { opacity: 0, x: 20 });
+      gsap.set("#titulo-mes-container h3", { opacity: 0 });
+      gsap.set(".dia-calendario", { opacity: 0 });
+
+      ScrollTrigger.create({
+        trigger: "#calendario-card",
+        start: "top 85%",
+        end: "top 20%",
+        onEnter: () => animarCalendario(),
+        onLeaveBack: () => ocultarCalendario(),
+      });
+
+      function animarCalendario() {
+        const tl = gsap.timeline();
+        tl.to(
+          "#calendario-card, #mariposa-cal-izq, #mariposa-cal-der, #titulo-mes-container h3, .dia-calendario",
+          {
+            opacity: 1,
+            scale: 1,
+            x: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+        ).to(
+          "#flores-cal-izq, #flores-cal-der",
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.2",
+        );
+      }
+
+      function ocultarCalendario() {
+        gsap.set("#flores-cal-izq", { opacity: 0, x: 60 });
+        gsap.set("#flores-cal-der", { opacity: 0, x: -60 });
+        gsap.set("#calendario-card", { opacity: 0, scale: 0.95 });
+        gsap.set("#mariposa-cal-izq", { opacity: 0, x: -20 });
+        gsap.set("#mariposa-cal-der", { opacity: 0, x: 20 });
+        gsap.set("#titulo-mes-container h3", { opacity: 0 });
+        gsap.set(".dia-calendario", { opacity: 0 });
+      }
+
+      gsap.to("#mariposa-cal-izq", {
+        y: -8,
+        duration: 3,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 1,
+      });
+      gsap.to("#mariposa-cal-der", {
+        y: -8,
+        duration: 3,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 1.2,
+      });
+      gsap.to("#dia-especial", {
+        scale: 1.03,
+        duration: 3,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 1.5,
+      });
+    });
+  }
+</script>
+
+<style>
+  #dia-especial {
+    box-shadow: 0 6px 20px rgba(4, 109, 81, 0.5);
+  }
+</style>

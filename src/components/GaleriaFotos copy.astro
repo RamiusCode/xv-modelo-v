@@ -1,0 +1,354 @@
+<section class="py-4 px-4 relative xl:px-40 overflow-hidden">
+    
+    <div class="absolute inset-0 bg-gradient-to-b z-0"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="text-center mb-12" id="titulo-galeria">
+            <div class="flex items-center justify-center gap-4 md:gap-6 mb-4">
+                <div id="mariposa-galeria-izq">
+                    <img src="/gif/mariposaVerde.gif" alt="Mariposa" class="w-10 h-10 md:w-12 md:h-12 object-contain" />
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <h2 class="font-great-vibes text-4xl md:text-5xl lg:text-6xl text-[#D4AF37] mb-2">
+                        Mis Momentos Especiales
+                    </h2>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 md:w-16 h-[2px] bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
+                        <div class="w-2 h-2 rounded-full bg-[#D4AF37]"></div>
+                        <div class="w-12 md:w-16 h-[2px] bg-gradient-to-l from-transparent to-[#D4AF37]"></div>
+                    </div>
+                </div>
+
+                <div id="mariposa-galeria-der">
+                    <img src="/gif/mariposaVerde.gif" alt="Mariposa" class="w-10 h-10 md:w-12 md:h-12 object-contain scale-x-[-1]" />
+                </div>
+            </div>
+            <p class="font-charm text-lg md:text-xl text-[#046D51]">
+                Recuerdos que llevaré siempre en mi corazón
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+            
+            <div class="foto-card cursor-pointer" id="foto-1" data-foto="/imagenes/fot1.webp" data-descripcion="✨ Momentos inolvidables ✨">
+                <div class="relative group overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 aspect-[4/3] border-2 border-[#D4AF37]/20">
+                  <img
+    src="/imagenes/fot1.webp"
+    alt="Momento especial 1"
+    class="w-full h-full object-cover [object-position:50%_80%] transform group-hover:scale-105 transition-transform duration-700"
+/>
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/80 via-[#046D51]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-2 border-2 border-[#D4AF37]/0 group-hover:border-[#D4AF37]/60 rounded-xl transition-all duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        <p class="text-white font-charm text-base md:text-lg text-center drop-shadow-lg">✨ Momentos inolvidables ✨</p>
+                    </div>
+                    <div class="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-[#D4AF37] text-lg">🔍</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="foto-card cursor-pointer" id="foto-2" data-foto="/imagenes/fot2.webp" data-descripcion="✨ Momentos inolvidables ✨">
+                <div class="relative group overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 aspect-[4/3] border-2 border-[#D4AF37]/20">
+                    <img
+                        src="/imagenes/fot2.webp"
+                        alt="Momento especial 2"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#D4AF37]/80 via-[#046D51]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-2 border-2 border-[#D4AF37]/0 group-hover:border-[#D4AF37]/60 rounded-xl transition-all duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        <p class="text-white font-charm text-base md:text-lg text-center drop-shadow-lg">✨ Momentos inolvidables ✨</p>
+                    </div>
+                    <div class="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-[#D4AF37] text-lg">🔍</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex justify-center mt-12" id="decoracion-inferior">
+            <div class="flex items-center gap-3">
+                <div class="w-12 md:w-16 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
+                <div class="relative">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#c9a55e] flex items-center justify-center shadow-lg">
+                        <span class="text-white text-2xl">✨</span>
+                    </div>
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#c9a55e] animate-ping opacity-20"></div>
+                </div>
+                <div class="w-12 md:w-16 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="modal-foto" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        
+        <button id="cerrar-modal" class="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group z-10">
+            <span class="text-white text-3xl group-hover:rotate-90 transition-transform duration-300">×</span>
+        </button>
+
+        <div class="relative max-w-6xl w-full" id="modal-contenido">
+            
+            <div class="absolute -inset-4 bg-gradient-to-br from-[#D4AF37] via-[#c9a55e] to-[#D4AF37] rounded-3xl opacity-30 blur-xl"></div>
+            
+            <div class="relative bg-white rounded-2xl p-3 md:p-4 shadow-2xl">
+                <div class="relative rounded-xl overflow-hidden">
+                    <img id="modal-imagen" src="" alt="Foto ampliada" class="w-full h-auto max-h-[80vh] object-contain" />
+                </div>
+                
+                <div id="modal-descripcion" class="text-center mt-4 font-charm text-lg md:text-xl text-[#D4AF37]">
+                    ✨ Momentos inolvidables ✨
+                </div>
+            </div>
+
+            <div class="absolute -top-8 -left-8 md:-top-12 md:-left-12 opacity-80" id="mariposa-modal-1">
+                <img src="/gif/mariposaVerde.gif" alt="Mariposa" class="w-16 h-16 md:w-20 md:h-20" />
+            </div>
+            <div class="absolute -bottom-8 -right-8 md:-bottom-12 md:-right-12 opacity-80" id="mariposa-modal-2">
+                <img src="/gif/mariposaVerde.gif" alt="Mariposa" class="w-16 h-16 md:w-20 md:h-20 scale-x-[-1]" />
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (typeof window !== 'undefined') {
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("📸 Iniciando galería elegante...");
+
+            // 🎯 ESTADO INICIAL
+            gsap.set("#titulo-galeria", { opacity: 0, y: -30 });
+            gsap.set("#mariposa-galeria-izq, #mariposa-galeria-der", { opacity: 0, scale: 0.5 });
+            gsap.set(".foto-card", { opacity: 0, scale: 0.9, y: 20 });
+            gsap.set("#decoracion-inferior", { opacity: 0, scale: 0.8 });
+
+            // ✨ ANIMACIÓN DEL TÍTULO
+            ScrollTrigger.create({
+                trigger: "#titulo-galeria",
+                start: "top 85%",
+                end: "top 20%",
+                onEnter: () => {
+                    const tl = gsap.timeline();
+                    
+                    tl.to("#titulo-galeria", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power2.out",
+                    })
+                    .to("#mariposa-galeria-izq, #mariposa-galeria-der", {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.6,
+                        ease: "back.out(1.5)",
+                        stagger: 0.1,
+                    }, "-=0.4");
+
+                    // 🦋 FLOTADO DE MARIPOSAS
+                    gsap.to("#mariposa-galeria-izq", {
+                        y: -8,
+                        rotation: 5,
+                        duration: 2.5,
+                        ease: "sine.inOut",
+                        yoyo: true,
+                        repeat: -1,
+                        delay: 0.5,
+                    });
+
+                    gsap.to("#mariposa-galeria-der", {
+                        y: -8,
+                        rotation: -5,
+                        duration: 2.5,
+                        ease: "sine.inOut",
+                        yoyo: true,
+                        repeat: -1,
+                        delay: 0.7,
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.set("#titulo-galeria", { opacity: 0, y: -30 });
+                    gsap.set("#mariposa-galeria-izq, #mariposa-galeria-der", { opacity: 0, scale: 0.5 });
+                },
+            });
+
+            // ✨ ANIMACIÓN DE LAS FOTOS EN CASCADA SUAVE
+            ScrollTrigger.create({
+                trigger: ".foto-card",
+                start: "top 90%",
+                end: "bottom 20%",
+                onEnter: () => {
+                    gsap.to(".foto-card", {
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                        duration: 0.7,
+                        stagger: {
+                            each: 0.12,
+                            from: "start",
+                            ease: "power2.out"
+                        },
+                        ease: "power3.out",
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.set(".foto-card", { opacity: 0, scale: 0.9, y: 20 });
+                },
+            });
+
+            // ✨ ANIMACIÓN DECORACIÓN INFERIOR
+            ScrollTrigger.create({
+                trigger: "#decoracion-inferior",
+                start: "top 95%",
+                end: "top 20%",
+                onEnter: () => {
+                    gsap.to("#decoracion-inferior", {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.8,
+                        ease: "back.out(1.5)",
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.set("#decoracion-inferior", { opacity: 0, scale: 0.8 });
+                },
+            });
+
+            // 🖼️ FUNCIONALIDAD DEL MODAL
+            const modal = document.getElementById("modal-foto");
+            const modalImagen = document.getElementById("modal-imagen") as HTMLImageElement | null;
+            const modalDescripcion = document.getElementById("modal-descripcion");
+            const cerrarModal = document.getElementById("cerrar-modal");
+            const fotoCards = document.querySelectorAll(".foto-card");
+
+            // Abrir modal al hacer clic en una foto
+            fotoCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    const fotoSrc = card.getAttribute("data-foto");
+                    const descripcion = card.getAttribute("data-descripcion");
+                    
+                    if (modalImagen && modal) {
+                        modalImagen.src = fotoSrc || ""; 
+                        
+                        if (modalDescripcion) {
+                            modalDescripcion.textContent = descripcion || "✨ Momentos inolvidables ✨";
+                        }
+                        
+                        // Mostrar modal con animación
+                        modal.classList.remove("hidden");
+                        modal.classList.add("flex");
+                        gsap.fromTo("#modal-contenido", 
+                            { scale: 0.8, opacity: 0 },
+                            { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.5)" }
+                        );
+
+                        // Animar mariposas del modal
+                        gsap.fromTo("#mariposa-modal-1", 
+                            { x: -50, opacity: 0 },
+                            { x: 0, opacity: 0.8, duration: 0.6, ease: "power2.out", delay: 0.2 }
+                        );
+                        gsap.fromTo("#mariposa-modal-2", 
+                            { x: 50, opacity: 0 },
+                            { x: 0, opacity: 0.8, duration: 0.6, ease: "power2.out", delay: 0.3 }
+                        );
+
+                        // Flotado de mariposas en modal
+                        gsap.to("#mariposa-modal-1", {
+                            y: -10,
+                            duration: 2,
+                            ease: "sine.inOut",
+                            yoyo: true,
+                            repeat: -1,
+                        });
+                        gsap.to("#mariposa-modal-2", {
+                            y: -10,
+                            duration: 2.2,
+                            ease: "sine.inOut",
+                            yoyo: true,
+                            repeat: -1,
+                        });
+                    }
+                });
+            });
+
+            // Cerrar modal
+            const cerrarModalFn = () => {
+                if (modal) {
+                    gsap.to("#modal-contenido", {
+                        scale: 0.8,
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: "power2.in",
+                        onComplete: () => {
+                            modal.classList.add("hidden");
+                            modal.classList.remove("flex");
+                        }
+                    });
+                }
+            };
+
+            if (cerrarModal) {
+                cerrarModal.addEventListener("click", cerrarModalFn);
+            }
+
+            // Cerrar con tecla ESC
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+                    cerrarModalFn();
+                }
+            });
+
+            // Cerrar al hacer clic fuera de la imagen
+            if (modal) {
+                modal.addEventListener("click", (e) => {
+                    if (e.target === modal) {
+                        cerrarModalFn();
+                    }
+                });
+            }
+
+            console.log("📸✨ ¡Galería elegante con modal activada!");
+        });
+    }
+</script>
+
+<style>
+    /* Efecto hover suave en las fotos */
+    .foto-card:hover {
+        transform: translateY(-8px);
+        transition: transform 0.4s ease;
+    }
+
+    /* Animación de ping personalizada */
+    @keyframes ping {
+        0% {
+            transform: scale(1);
+            opacity: 0.2;
+        }
+        75%, 100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    .animate-ping {
+        animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    /* Scroll suave para el modal */
+    #modal-foto {
+        overflow-y: auto;
+    }
+</style>
